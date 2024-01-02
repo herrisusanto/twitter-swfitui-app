@@ -17,6 +17,7 @@
 		0F56EAFD2B43C7D800723211 /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EAFC2B43C7D800723211 /* NotificationsView.swift */; };
 		0F56EB002B43C7F500723211 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EAFF2B43C7F500723211 /* MessagesView.swift */; };
 		0F56EB052B43C9C300723211 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EB042B43C9C300723211 /* ProfileView.swift */; };
+		0F56EB072B43DF5B00723211 /* TweetFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EB062B43DF5B00723211 /* TweetFilterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		0F56EAFC2B43C7D800723211 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		0F56EAFF2B43C7F500723211 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		0F56EB042B43C9C300723211 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0F56EB062B43DF5B00723211 /* TweetFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFilterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 		0F56EB022B43C9AF00723211 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0F56EB062B43DF5B00723211 /* TweetFilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				0F56EAF12B43062E00723211 /* FeedView.swift in Sources */,
 				0F56EADB2B4304D100723211 /* Twitter_SwiftUIApp.swift in Sources */,
 				0F56EAFA2B43C7C200723211 /* ExploreView.swift in Sources */,
+				0F56EB072B43DF5B00723211 /* TweetFilterViewModel.swift in Sources */,
 				0F56EAF72B43BD2900723211 /* MainTab.swift in Sources */,
 				0F56EAFD2B43C7D800723211 /* NotificationsView.swift in Sources */,
 			);
