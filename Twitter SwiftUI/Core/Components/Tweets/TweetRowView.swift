@@ -80,7 +80,7 @@ struct ActionButtons: View {
             }label: {
                 Image(systemName: "bookmark")
                     .font(.subheadline)
-            }
+            } 
         }
         .padding(.vertical, 10)
     }
