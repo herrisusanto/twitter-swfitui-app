@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  RegistrationView.swift
 //  Twitter SwiftUI
 //
 //  Created by loratech on 04/01/24.
@@ -7,41 +7,34 @@
 
 import SwiftUI
 
-struct LoginView: View {
+struct RegistrationView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var username = ""
+    @State private var fullName = ""
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
-            AuthHeaderView(firstTitle: "Hello,", secondTitle: "Welcome Back")
+            AuthHeaderView(firstTitle: "Get Started.", secondTitle: "Create your account")
             
             VStack(spacing: 40) {
                 CustomInputField(imageName: "envelope", placeholderText: "Email", text: $email)
+                
+                CustomInputField(imageName: "person", placeholderText: "Username", text: $email)
+                
+                CustomInputField(imageName: "person.badge.key", placeholderText: "Full Name", text: $email)
                 
                 CustomInputField(imageName: "lock", placeholderText: "Password", text: $password)
             }
             .padding(.horizontal, 32)
             .padding(.top, 44)
             
-            HStack {
-                Spacer()
-                NavigationLink{
-                    Text("Reset password view!")
-                }label:{
-                    Text("Forgot Password?")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(.blue)
-                        .padding(.top)
-                        .padding(.trailing, 24)
-                }
-            }
-            
             Button{
-                print("Sign in button pressed!") 
+                print("Sign up button pressed!")
             }label: {
-                Text("Sign In")
+                Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(width: 340, height: 50)
@@ -52,16 +45,16 @@ struct LoginView: View {
             }
             .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y:0)
             .padding(.top, 32)
-             
+            
             Spacer()
             
-            NavigationLink{
-                RegistrationView()
+            Button{
+                presentationMode.wrappedValue.dismiss()
             }label: {
                 HStack{
-                    Text("Don't have an account?")
+                    Text("Already have an account?")
                         .font(.footnote)
-                    Text("Sign Up")
+                    Text("Sign In")
                         .font(.footnote)
                         .fontWeight(.semibold)
                     
@@ -69,12 +62,12 @@ struct LoginView: View {
             }
             .padding(.bottom, 32)
             .foregroundColor(.blue)
+            
         }
         .ignoresSafeArea()
-        .navigationBarHidden(true)
     }
 }
 
 #Preview {
-    LoginView()
+    RegistrationView()
 }
