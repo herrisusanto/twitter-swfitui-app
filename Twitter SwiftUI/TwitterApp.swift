@@ -30,6 +30,7 @@ struct TwitterApp: App {
         WindowGroup {
             NavigationView {
                 ContentView()
+//                ProfilePhotoSelectorView()
             }
             .environmentObject(viewModel)
         }
