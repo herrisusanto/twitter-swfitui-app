@@ -62,6 +62,7 @@
 		0F56EB692B46B91700723211 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 0F56EB682B46B91700723211 /* FirebaseStorage */; };
 		0F56EB6B2B46B91700723211 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 0F56EB6A2B46B91700723211 /* FirebaseStorageCombine-Community */; };
 		0F56EB6D2B46D2B400723211 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EB6C2B46D2B400723211 /* AuthViewModel.swift */; };
+		0F56EB6F2B495B0400723211 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EB6E2B495B0400723211 /* ProfilePhotoSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		0F56EB302B4690B300723211 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		0F56EB332B46B63B00723211 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0F56EB6C2B46D2B400723211 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0F56EB6E2B495B0400723211 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 			children = (
 				0F56EB282B46845C00723211 /* LoginView.swift */,
 				0F56EB302B4690B300723211 /* RegistrationView.swift */,
+				0F56EB6E2B495B0400723211 /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F56EB6F2B495B0400723211 /* ProfilePhotoSelectorView.swift in Sources */,
 				0F56EB1B2B451D1E00723211 /* SubMenuOptionRowView.swift in Sources */,
 				0F56EB052B43C9C300723211 /* ProfileView.swift in Sources */,
 				0F56EB242B46685700723211 /* TextArea.swift in Sources */,

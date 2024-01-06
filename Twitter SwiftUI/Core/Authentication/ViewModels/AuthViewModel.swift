@@ -11,6 +11,7 @@ import Firebase
 
 final class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthenticateUser = false
     
     init(){
         self.userSession = Auth.auth().currentUser
@@ -21,7 +22,7 @@ final class AuthViewModel: ObservableObject {
         print("DEBUG: login with email \(email) and password: \(password)")
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error {
-                print("DEBUT: Failed to sign in with error: \(error.localizedDescription)")
+                print("DEBUG: Failed to sign in with error: \(error.localizedDescription)")
                 return
             }
             
@@ -39,7 +40,7 @@ final class AuthViewModel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.userSession = user
+//            self.userSession = user
             
             let data = ["uid": user.uid,
                         "email": email.lowercased(),
@@ -51,6 +52,7 @@ final class AuthViewModel: ObservableObject {
                 .document(user.uid)
                 .setData(data) { _ in
                     print("DEBUG: Did upload user data...!")
+                    self.didAuthenticateUser = true 
                 }
         }
     }

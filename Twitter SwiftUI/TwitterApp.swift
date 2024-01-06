@@ -20,8 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct TwitterApp: App {
     
-    @StateObject var viewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var viewModel = AuthViewModel()
     
     //    init(){
     //        FirebaseApp.configure()
