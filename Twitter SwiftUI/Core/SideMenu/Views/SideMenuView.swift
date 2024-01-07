@@ -20,7 +20,7 @@ struct SideMenuView: View {
                         .resizable()
                         .scaledToFit()
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        .frame(width: 48, height: 48)
+                        .frame(width: 72, height: 72)
                         
                         
                     VStack(alignment: .leading,spacing: 4) {
@@ -39,7 +39,7 @@ struct SideMenuView: View {
                 ForEach(SideMenuViewModel.allCases, id: \.rawValue){ menu in
                     if menu == .profile {
                         NavigationLink {
-                            ProfileView()
+                            ProfileView(user: user)
                         } label: {
                             SubMenuOptionRowView(viewModel:menu)
                         }
@@ -61,6 +61,6 @@ struct SideMenuView: View {
     }
 }
     
-    //#Preview {
-    //    SideMenuView()
-    //}
+//    #Preview {
+//        SideMenuView()
+//    }

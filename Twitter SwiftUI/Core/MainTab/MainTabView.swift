@@ -28,7 +28,7 @@ struct MainTabView: View {
                 .tabItem {
                     Image(systemName: "envelope")
                 }
-        }
+        } 
     }
 }
 

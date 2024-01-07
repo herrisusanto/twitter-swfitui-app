@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F4CAB252B4A823600805955 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CAB242B4A823600805955 /* ExploreViewModel.swift */; };
 		0F56EADB2B4304D100723211 /* TwitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EADA2B4304D100723211 /* TwitterApp.swift */; };
 		0F56EADF2B4304D300723211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F56EADE2B4304D300723211 /* Assets.xcassets */; };
 		0F56EAE22B4304D300723211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F56EAE12B4304D300723211 /* Preview Assets.xcassets */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F4CAB242B4A823600805955 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		0F56EAD72B4304D100723211 /* Twitter SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F56EADA2B4304D100723211 /* TwitterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApp.swift; sourceTree = "<group>"; };
 		0F56EADE2B4304D300723211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		0F56EB092B45080400723211 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0F4CAB242B4A823600805955 /* ExploreViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				0F56EB312B4690B300723211 /* RegistrationView.swift in Sources */,
 				0F56EB152B450DBA00723211 /* SideMenuViewModel.swift in Sources */,
 				0F56EB2B2B4685B200723211 /* RoundedShape.swift in Sources */,
+				0F4CAB252B4A823600805955 /* ExploreViewModel.swift in Sources */,
 				0F56EB0C2B45086600723211 /* UserRowView.swift in Sources */,
 				0F56EB742B49A4BE00723211 /* ImageUploader.swift in Sources */,
 				0F56EB192B45183800723211 /* ContentView.swift in Sources */,

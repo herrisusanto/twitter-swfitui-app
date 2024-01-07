@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileView: View {
     
     @State private var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
     @Environment(\.presentationMode) var mode
+    private let user: User
+    
+    init(user: User){
+        self.user = user
+    }
     
     var body: some View {
         VStack(alignment:.leading) {
@@ -27,11 +33,12 @@ struct ProfileView: View {
             
             Spacer()
         }
+        .navigationBarHidden(true)
     }
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(user: User(id: NSUUID().uuidString, username: "john.doe", fullName: "John Doe", profileImageUrl: "www.google.com", email: "john.doe@gmail.com"))
 }
 
 
@@ -49,11 +56,15 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 16)
                         .foregroundColor(.white)
-                        .offset(x: 16, y: 12)
+                        .offset(x: 16, y: -12)
                 }
-                Circle()
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: 72, height: 72)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     .offset(x: 16, y: 24)
+                
             }
         }
         .frame(height: 96)
@@ -83,12 +94,12 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4){
             HStack {
-                Text("John Doe")
+                Text(user.fullName)
                     .font(.title2).bold()
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color(.systemBlue))
             }
-            Text("@john.doe")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             Text("An iOS Developer")
@@ -103,7 +114,7 @@ extension ProfileView {
                 Spacer()
                 HStack{
                     Image(systemName: "link")
-                    Text("www.john.doe@gmail.com")
+                    Text(user.email)
                 }
             }
             .font(.caption)

@@ -28,7 +28,7 @@ struct ContentView: View {
 
 #Preview {
     NavigationView {
-        ContentView()
+        ContentView().environmentObject(AuthViewModel())
     }
 }
 
@@ -59,13 +59,20 @@ extension ContentView {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
-                Button{
-                    withAnimation(.easeInOut) {
-                        showMenu.toggle()
+                if let user = viewModel.currentUser {
+                    Button{
+                        withAnimation(.easeInOut) {
+                            showMenu.toggle()
+                        }
+                    }label:{
+                        KFImage(URL(string: user.profileImageUrl))
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 32, height: 32)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        
+                        
                     }
-                }label:{
-                    Circle()
-                        .frame(width: 32, height: 32)
                 }
             }
             
