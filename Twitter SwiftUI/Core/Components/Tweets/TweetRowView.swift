@@ -6,28 +6,36 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TweetRowView: View {
+    let tweet: Tweet
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top,spacing: 12) {
-                Circle()
-                    .foregroundColor(.blue)
-                .frame(width: 56, height: 56)
+                if let user = tweet.user {
+                    KFImage(URL(string: user.profileImageUrl))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 56, height: 56)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                } 
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text("Bruce Wayne")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                        Text("@batman")
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                        Text("4w")
-                            .font(.caption)
-                            .foregroundColor(.gray)
+                    if let user = tweet.user {
+                        HStack {
+                            Text(user.fullName)
+                                .font(.subheadline)
+                                .fontWeight(.bold)
+                            Text("@\(user.username)")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                            Text("4w")
+                                .font(.caption)
+                                .foregroundColor(.gray)
+                        }
                     }
-                    Text("Good morning Twitter!")
+                    Text(tweet.caption)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                 }
@@ -42,7 +50,7 @@ struct TweetRowView: View {
 }
 
 #Preview {
-    TweetRowView()
+    TweetRowView(tweet: MockTweet.tweet)
 }
 
 struct ActionButtons: View {

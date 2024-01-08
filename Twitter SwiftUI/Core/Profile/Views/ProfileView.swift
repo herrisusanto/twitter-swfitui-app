@@ -11,12 +11,12 @@ import Kingfisher
 struct ProfileView: View {
     
     @State private var selectedFilter: TweetFilterViewModel = .tweets
+    @ObservedObject var viewModel: ProfileViewModel
     @Namespace var animation
     @Environment(\.presentationMode) var mode
-    private let user: User
     
     init(user: User){
-        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
     }
     
     var body: some View {
@@ -38,7 +38,7 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView(user: User(id: NSUUID().uuidString, username: "john.doe", fullName: "John Doe", profileImageUrl: "www.google.com", email: "john.doe@gmail.com"))
+    ProfileView(user: MockUser.user )
 }
 
 
@@ -58,7 +58,7 @@ extension ProfileView {
                         .foregroundColor(.white)
                         .offset(x: 16, y: -12)
                 }
-                KFImage(URL(string: user.profileImageUrl))
+                KFImage(URL(string: viewModel.user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 72, height: 72)
@@ -94,12 +94,12 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4){
             HStack {
-                Text(user.fullName)
+                Text(viewModel.user.fullName)
                     .font(.title2).bold()
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color(.systemBlue))
             }
-            Text("@\(user.username)")
+            Text("@\(viewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             Text("An iOS Developer")
@@ -114,7 +114,7 @@ extension ProfileView {
                 Spacer()
                 HStack{
                     Image(systemName: "link")
-                    Text(user.email)
+                    Text(viewModel.user.email)
                 }
             }
             .font(.caption)
@@ -161,8 +161,8 @@ extension ProfileView {
     var tweetsView: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0...9, id: \.self) { _ in
-                    TweetRowView()
+                ForEach(viewModel.tweets) { tweet in
+                    TweetRowView(tweet: tweet)
                 }
             }
             .padding(.horizontal, 10)

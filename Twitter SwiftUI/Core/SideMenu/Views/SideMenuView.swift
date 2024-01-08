@@ -11,6 +11,7 @@ import Kingfisher
 struct SideMenuView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var tweetViewModel: TweetViewModel
     
     var body: some View {
         if let user = viewModel.currentUser {
@@ -21,8 +22,8 @@ struct SideMenuView: View {
                         .scaledToFit()
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                         .frame(width: 72, height: 72)
-                        
-                        
+                    
+                    
                     VStack(alignment: .leading,spacing: 4) {
                         Text(user.fullName)
                             .font(.subheadline)
@@ -60,7 +61,8 @@ struct SideMenuView: View {
         }
     }
 }
-    
-//    #Preview {
-//        SideMenuView()
-//    }
+
+#Preview {
+    SideMenuView()
+        .environmentObject(AuthViewModel())
+}

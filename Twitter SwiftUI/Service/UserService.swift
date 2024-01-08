@@ -34,8 +34,7 @@ struct UserService {
 //                }
                 let users = documents.compactMap({try? $0.data(as: User.self)})
                 
-                completion(users)
-                print("DEBUG: Users are here:\(users)")
+                completion(users) 
             }
     }
 }

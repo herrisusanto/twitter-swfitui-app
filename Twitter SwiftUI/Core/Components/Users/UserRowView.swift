@@ -33,5 +33,5 @@ struct UserRowView: View {
 }
 
 #Preview {
-    UserRowView(user: User(id: NSUUID().uuidString, username: "dakota.johnson", fullName: "Dakota Johnson", profileImageUrl: "https://firebasestorage.googleapis.com:443/v0/b/twitter-swiftui-app.appspot.com/o/profile_image%2FB84A92B2-34B0-4F7A-86F1-EF217C03CFBE?alt=media&token=f562af1a-8051-47c5-a505-b245b0fc71e9", email: "dakota.johnson@gmail.com"))
+    UserRowView(user: MockUser.user)
 }
