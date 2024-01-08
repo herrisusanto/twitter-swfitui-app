@@ -9,20 +9,24 @@ import SwiftUI
 import Kingfisher
 
 struct TweetRowView: View {
-    let tweet: Tweet
+    @ObservedObject var viewModel: TweetRowViewModel
+    
+    init(tweet: Tweet){
+        self.viewModel = TweetRowViewModel(tweet: tweet)
+    }
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top,spacing: 12) {
-                if let user = tweet.user {
+                if let user = viewModel.tweet.user {
                     KFImage(URL(string: user.profileImageUrl))
                         .resizable()
                         .scaledToFill()
                         .frame(width: 56, height: 56)
                         .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                } 
+                }
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    if let user = tweet.user {
+                    if let user = viewModel.tweet.user {
                         HStack {
                             Text(user.fullName)
                                 .font(.subheadline)
@@ -35,12 +39,13 @@ struct TweetRowView: View {
                                 .foregroundColor(.gray)
                         }
                     }
-                    Text(tweet.caption)
+                    Text(viewModel.tweet.caption)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                 }
             }
-            ActionButtons()
+            
+            actionButtons
             
             Divider()
             
@@ -53,8 +58,8 @@ struct TweetRowView: View {
     TweetRowView(tweet: MockTweet.tweet)
 }
 
-struct ActionButtons: View {
-    var body: some View {
+extension TweetRowView {
+    var actionButtons: some View {
         HStack{
             Button{
                 print("button comment!")
@@ -75,10 +80,11 @@ struct ActionButtons: View {
             Spacer()
             
             Button{
-                print("button like!")
+                viewModel.tweet.didLike ?? false ? viewModel.unlikeTweet() : viewModel.likeTweet()
             }label: {
-                Image(systemName: "heart")
+                Image(systemName: viewModel.tweet.didLike ?? false ? "heart.fill": "heart")
                     .font(.subheadline)
+                    .foregroundColor(viewModel.tweet.didLike ?? false ? .red : .gray)
             }
             
             Spacer()
@@ -88,7 +94,7 @@ struct ActionButtons: View {
             }label: {
                 Image(systemName: "bookmark")
                     .font(.subheadline)
-            } 
+            }
         }
         .padding(.vertical, 10)
     }

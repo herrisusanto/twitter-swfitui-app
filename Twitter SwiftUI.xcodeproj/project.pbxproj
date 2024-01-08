@@ -13,6 +13,7 @@
 		0F4CAB2D2B4B99B700805955 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CAB2C2B4B99B700805955 /* FeedViewModel.swift */; };
 		0F4CAB2F2B4B9D6900805955 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CAB2E2B4B9D6900805955 /* Tweet.swift */; };
 		0F4CAB312B4BB21500805955 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CAB302B4BB21500805955 /* ProfileViewModel.swift */; };
+		0F4CAB352B4BC32A00805955 /* TweetRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4CAB342B4BC32A00805955 /* TweetRowViewModel.swift */; };
 		0F56EADB2B4304D100723211 /* TwitterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F56EADA2B4304D100723211 /* TwitterApp.swift */; };
 		0F56EADF2B4304D300723211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F56EADE2B4304D300723211 /* Assets.xcassets */; };
 		0F56EAE22B4304D300723211 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F56EAE12B4304D300723211 /* Preview Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		0F4CAB2C2B4B99B700805955 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		0F4CAB2E2B4B9D6900805955 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		0F4CAB302B4BB21500805955 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		0F4CAB342B4BC32A00805955 /* TweetRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRowViewModel.swift; sourceTree = "<group>"; };
 		0F56EAD72B4304D100723211 /* Twitter SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F56EADA2B4304D100723211 /* TwitterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterApp.swift; sourceTree = "<group>"; };
 		0F56EADE2B4304D300723211 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4CAB322B4BC2F800805955 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F56EAF32B43069400723211 /* TweetRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0F4CAB332B4BC30100805955 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0F4CAB342B4BC32A00805955 /* TweetRowViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0F56EACE2B4304D100723211 = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +302,8 @@
 		0F56EAF22B43066800723211 /* Tweets */ = {
 			isa = PBXGroup;
 			children = (
-				0F56EAF32B43069400723211 /* TweetRowView.swift */,
+				0F4CAB332B4BC30100805955 /* ViewModels */,
+				0F4CAB322B4BC2F800805955 /* Views */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -584,6 +603,7 @@
 				0F56EB782B49B28100723211 /* User.swift in Sources */,
 				0F56EB2D2B468A1C00723211 /* CustomInputField.swift in Sources */,
 				0F56EB222B46662C00723211 /* TweetViewModel.swift in Sources */,
+				0F4CAB352B4BC32A00805955 /* TweetRowViewModel.swift in Sources */,
 				0F4CAB2B2B4AE76A00805955 /* TweetService.swift in Sources */,
 				0F56EB112B450D9100723211 /* SideMenuView.swift in Sources */,
 				0F56EB132B450DAA00723211 /* SideMenuRowView.swift in Sources */,
