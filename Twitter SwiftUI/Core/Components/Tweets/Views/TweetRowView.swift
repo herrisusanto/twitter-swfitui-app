@@ -82,9 +82,18 @@ extension TweetRowView {
             Button{
                 viewModel.tweet.didLike ?? false ? viewModel.unlikeTweet() : viewModel.likeTweet()
             }label: {
-                Image(systemName: viewModel.tweet.didLike ?? false ? "heart.fill": "heart")
-                    .font(.subheadline)
+                HStack {
+                    Image(systemName: viewModel.tweet.didLike ?? false ? "heart.fill": "heart")
+                        .font(.subheadline)
                     .foregroundColor(viewModel.tweet.didLike ?? false ? .red : .gray)
+                    
+                    if viewModel.tweet.likes != 0 {
+                        Text("\(viewModel.tweet.likes)")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                }
+                
             }
             
             Spacer()

@@ -49,7 +49,6 @@ extension ProfileView {
                 .ignoresSafeArea()
             VStack {
                 Button{
-                    print("Back button")
                     mode.wrappedValue.dismiss()
                 }label: {
                     Image(systemName: "arrow.left")
@@ -102,9 +101,13 @@ extension ProfileView {
             Text("@\(viewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
-            Text("An iOS Developer")
-                .font(.subheadline)
-                .padding(.vertical)
+            
+            if let about = viewModel.user.about{
+                Text(about)
+                    .font(.subheadline)
+                    .padding(.vertical)
+            }
+            
             
             HStack(spacing: 24){
                 HStack{

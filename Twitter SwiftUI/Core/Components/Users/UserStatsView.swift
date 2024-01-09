@@ -9,8 +9,8 @@ import SwiftUI
 
 struct UserStatsView: View {
     var body: some View {
-        HStack(spacing: 24){
-            HStack(spacing: 4){
+        HStack(spacing: 8){
+            HStack{
                 Text("222")
                     .font(.subheadline)
                     .bold()

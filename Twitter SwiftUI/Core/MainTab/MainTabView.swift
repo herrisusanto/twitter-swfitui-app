@@ -13,7 +13,7 @@ struct MainTabView: View {
             FeedView()
                 .tabItem {
                     Image(systemName: "house")
-                }
+                } 
             ExploreView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
