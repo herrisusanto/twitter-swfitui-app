@@ -27,7 +27,6 @@ struct ExploreView: View {
                     }
                 }
             }
-            .navigationTitle("Explore")
             .navigationBarTitleDisplayMode(.inline)
     }
 }

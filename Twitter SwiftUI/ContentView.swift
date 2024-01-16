@@ -11,11 +11,12 @@ import Kingfisher
 struct ContentView: View {
     
     @State private var showMenu = false
+    @State var activeTab: MainTabViewModel = .home
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         Group {
-            if viewModel.userSession == nil {
+            if $viewModel.userSession == nil {
                 LoginView()
             } else {
                 mainInterfaceView
@@ -38,6 +39,8 @@ extension ContentView {
         ZStack(alignment: .leading) {
             MainTabView()
                 .navigationBarHidden(showMenu)
+                
+                
             
             if showMenu {
                 ZStack{
@@ -54,8 +57,7 @@ extension ContentView {
                 .frame(width: 300)
                 .offset(x: showMenu ? 0 : -300, y: 0)
                 .background(showMenu ? .white : .clear)
-        }
-        .navigationTitle("Home")
+        } 
         .navigationBarTitleDisplayMode(.inline)
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
